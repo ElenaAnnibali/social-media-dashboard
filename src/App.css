@@ -1,0 +1,58 @@
+.App {
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+.dark,
+.dark .App {
+  background-color: #20222f;
+  transition: all 0.3s ease;
+}
+
+.dark .white {
+  color: #fff;
+}
+
+.dark .gray {
+  color: #8c98c6;
+}
+
+.dark .darkCard {
+  background-color: #252b42;
+}
+/* Button Styles */
+
+.dark-mode-toggle {
+  position: absolute;
+  width: 48px;
+  height: 24px;
+  left: 278px;
+  top: 0px;
+  border-radius: 12px;
+  border-width: 0;
+  background-color: #aeb3cb;
+}
+.dark .dark-mode-toggle {
+  background: linear-gradient(225deg, #40db82 0%, #388fe7 98.02%);
+  border-radius: 12px;
+}
+.dark-mode-toggle svg {
+  fill: #000;
+}
+.dark-mode-slider {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  position: relative;
+  transform: translateX(0px);
+  transition: all 0.5s ease;
+}
+
+.dark .dark-mode-slider {
+  transform: translateX(20px);
+  background-color: #252b42;
+}
