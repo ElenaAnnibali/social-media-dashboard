@@ -3,6 +3,25 @@ import './App.css';
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 
+const bgStyles = css`
+  position: absolute;
+  width: 375px;
+  height: 235px;
+  left: 0px;
+  top: 0px;
+
+  background: #f7f9ff;
+  border-radius: 0px 0px 20px 20px;
+
+  @media (min-width: 376px) {
+    position: absolute;
+    width: 1840px;
+    height: 244px;
+    left: 0px;
+    top: 0px;
+  }
+`;
+
 const titleStyles = css`
   position: absolute;
   width: 284px;
@@ -24,6 +43,20 @@ const titleStyles = css`
     /* identical to box height */
 
     color: #1d1f29;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 331px;
+      height: 34px;
+      left: 162px;
+      right: 0%;
+      top: calc(50% - 34px / 2 - 10px);
+      font-size: 28px;
+      line-height: 34px;
+      /* identical to box height */
+
+      text-align: center;
+    }
   }
 
   p {
@@ -39,6 +72,21 @@ const titleStyles = css`
     /* identical to box height */
 
     color: #63687d;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 162px;
+      height: 17px;
+      left: 163.5px;
+      right: 50.6%;
+      top: calc(50% - 17px / 2 + 18.5px);
+
+      font-size: 14px;
+      line-height: 17px;
+      /* identical to box height */
+
+      color: #63687d;
+    }
   }
 `;
 
@@ -50,6 +98,10 @@ const lineStyles = css`
   top: 110px;
 
   background: #848bab;
+
+  @media (min-width: 376px) {
+    height: 0;
+  }
 `;
 
 const darkModeStyles = css`
@@ -74,39 +126,33 @@ const darkModeStyles = css`
     color: #63687d;
   }
 
-  /* .dark-mode-toggle {
+  @media (min-width: 376px) {
     position: absolute;
-    width: 48px;
+    width: 136px;
     height: 24px;
-    left: 278px;
-    top: 0px;
-    border-radius: 12px;
-    border-width: 0;
-    background-color: #aeb3cb;
-  }
-  .dark-mode-toggle svg {
-    fill: #aeb3cb;
-  }
-  .dark-mode-slider {
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    left: 0;
-    top: 0px;
-    border-radius: 50%;
-    background-color: #fff;
-    display: flex;
-    position: relative;
-    transform: translateX(0px);
-    transition: all 0.2s ease;
-  }
+    left: 960px;
+    top: 49px;
 
-  .dark .dark-mode-slider {
-    transform: translateX(20px);
-  } */
+    span {
+      position: absolute;
+      width: 80px;
+      height: 17px;
+      left: 188px;
+      right: 44.85%;
+      top: calc(50% - 17px / 2 - 0.5px);
+    }
+  }
 `;
 
 const cardStyles = css`
+  @media (min-width: 376px) {
+    position: absolute;
+    width: 1450px;
+    height: 216px;
+    left: 165px;
+    top: 136px;
+  }
+
   .icon {
     position: absolute;
     width: 20px;
@@ -116,6 +162,11 @@ const cardStyles = css`
 
     .instagram {
       left: 109px;
+    }
+
+    @media (min-width: 376px) {
+      left: 85px;
+      top: 32px;
     }
   }
 
@@ -137,6 +188,14 @@ const cardStyles = css`
     .insta {
       left: 138px;
     }
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 86px;
+      height: 20px;
+      left: 111px;
+      top: 32px;
+    }
   }
 
   .subscribersNumber {
@@ -155,6 +214,12 @@ const cardStyles = css`
     letter-spacing: -2px;
 
     color: #1d1f29;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      left: 64px;
+      top: 28px;
+    }
   }
 
   .followers {
@@ -171,6 +236,12 @@ const cardStyles = css`
     text-transform: uppercase;
 
     color: #63687d;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      left: 72px;
+      top: 137px;
+    }
   }
 
   .today {
@@ -190,6 +261,12 @@ const cardStyles = css`
     img {
       margin-right: 5px;
       margin-bottom: 2px;
+    }
+
+    @media (min-width: 376px) {
+      position: absolute;
+      left: 87px;
+      top: 177px;
     }
   }
   .youtube {
@@ -213,6 +290,24 @@ const cardStyles = css`
 
       background: #178ff5;
     }
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 216px;
+      left: 0;
+      top: 46px;
+
+      div {
+        position: absolute;
+        width: 255px;
+        height: 4px;
+      }
+
+      .dark .darkCard {
+        background-color: #252b42;
+      }
+    }
   }
 
   .secondCard {
@@ -231,6 +326,20 @@ const cardStyles = css`
       border-radius: 5px 5px 0 0;
 
       background: #178ff5;
+    }
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 216px;
+      left: 305px;
+      top: 46px;
+
+      div {
+        position: absolute;
+        width: 255px;
+        height: 4px;
+      }
     }
   }
 
@@ -256,6 +365,20 @@ const cardStyles = css`
         #fdc366 100%
       );
     }
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 216px;
+      left: 590px;
+      top: 46px;
+
+      div {
+        position: absolute;
+        width: 255px;
+        height: 4px;
+      }
+    }
   }
 
   .fourthCard {
@@ -275,6 +398,20 @@ const cardStyles = css`
 
       background: #c4032b;
     }
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 216px;
+      left: 875px;
+      top: 46px;
+      background: #f1f3fa;
+
+      div {
+        position: absolute;
+        width: 255px;
+        height: 4px;
+      }
+    }
   }
 `;
 
@@ -291,6 +428,30 @@ const overviewStyles = css`
   /* identical to box height */
 
   color: #63687d;
+
+  @media (min-width: 376px) {
+    position: absolute;
+    width: 209px;
+    height: 29px;
+    left: 165px;
+    top: 398px;
+
+    .overviewTitle {
+      left: 0;
+      top: 23px;
+    }
+    .dark .white {
+      color: #fff;
+    }
+
+    .dark .gray {
+      color: #8c98c6;
+    }
+
+    .dark .darkCard {
+      background-color: #252b42;
+    }
+  }
 
   p {
     position: absolute;
@@ -315,6 +476,12 @@ const overviewStyles = css`
     img {
       margin-right: 5px;
       margin-bottom: 2px;
+    }
+
+    @media (min-width: 376px) {
+      position: absolute;
+      left: 195px;
+      top: 86px;
     }
   }
 
@@ -354,6 +521,11 @@ const overviewStyles = css`
     height: 20px;
     top: 26px;
     left: 275px;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      left: 204px;
+    }
   }
 
   .twitter {
@@ -367,6 +539,13 @@ const overviewStyles = css`
     top: 83px;
     background: #f1f3fa;
     border-radius: 5px;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 125px;
+      top: 106px;
+    }
   }
   .secondOverview {
     position: absolute;
@@ -375,6 +554,14 @@ const overviewStyles = css`
     top: 224px;
     background: #f1f3fa;
     border-radius: 5px;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 125px;
+      left: 305px;
+      top: 106px;
+    }
   }
   .thirdOverview {
     position: absolute;
@@ -383,6 +570,14 @@ const overviewStyles = css`
     top: 365px;
     background: #f1f3fa;
     border-radius: 5px;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 125px;
+      left: 590px;
+      top: 106px;
+    }
   }
   .fourthOverview {
     position: absolute;
@@ -391,6 +586,14 @@ const overviewStyles = css`
     top: 506px;
     background: #f1f3fa;
     border-radius: 5px;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 125px;
+      left: 875px;
+      top: 106px;
+    }
   }
   .fifthOverview {
     position: absolute;
@@ -399,6 +602,14 @@ const overviewStyles = css`
     top: 647px;
     background: #f1f3fa;
     border-radius: 5px;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 125px;
+
+      top: 255px;
+    }
   }
   .sixthOverview {
     position: absolute;
@@ -407,6 +618,14 @@ const overviewStyles = css`
     top: 788px;
     background: #f1f3fa;
     border-radius: 5px;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 125px;
+      left: 305px;
+      top: 255px;
+    }
   }
   .seventhOverview {
     position: absolute;
@@ -415,6 +634,14 @@ const overviewStyles = css`
     top: 929px;
     background: #f1f3fa;
     border-radius: 5px;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 125px;
+      left: 590px;
+      top: 255px;
+    }
   }
   .eighthOverview {
     position: absolute;
@@ -423,6 +650,15 @@ const overviewStyles = css`
     top: 1070px;
     background: #f1f3fa;
     border-radius: 5px;
+
+    @media (min-width: 376px) {
+      position: absolute;
+      width: 255px;
+      height: 125px;
+      left: 875px;
+      top: 255px;
+      background: #f1f3fa;
+    }
   }
 `;
 
@@ -439,6 +675,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className="bgDark" css={bgStyles} />
       <div css={titleStyles}>
         <h1 className="white">Social Media Dashboard</h1>
         <p className="gray">Total Followers: 23,004</p>
@@ -455,7 +692,7 @@ function App() {
           <div className="dark-mode-slider" />
         </button>
       </div>
-      <div css={cardStyles}>
+      <div className="gridContainer" css={cardStyles}>
         <div className="firstCard darkCard">
           <div />
           <img
@@ -472,6 +709,7 @@ function App() {
             12 Today
           </span>
         </div>
+
         <div className="secondCard darkCard">
           <div />
           <img
@@ -488,6 +726,7 @@ function App() {
             99 Today
           </span>
         </div>
+
         <div className="thirdCard darkCard">
           <div />
           <img
@@ -505,6 +744,7 @@ function App() {
             1099 Today
           </span>
         </div>
+
         <div className="fourthCard darkCard">
           <div />
           <img
@@ -522,8 +762,9 @@ function App() {
           </span>
         </div>
       </div>
+      {/* overview section */}
       <div css={overviewStyles}>
-        <p className="white">Overview - Today</p>
+        <p className="overviewTitle white">Overview - Today</p>
         <div className="firstOverview darkCard">
           <p className="subtitle gray">Page Views</p>
           <p className="number white">87</p>

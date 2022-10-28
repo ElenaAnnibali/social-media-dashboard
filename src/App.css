@@ -9,15 +9,19 @@
 }
 
 .dark .white {
-  color: #fff;
+  color: #fff !important;
 }
 
 .dark .gray {
-  color: #8c98c6;
+  color: #8c98c6 !important;
 }
 
 .dark .darkCard {
-  background-color: #252b42;
+  background-color: #252b42 !important;
+}
+
+.dark .bgDark {
+  background-color: #20222f;
 }
 /* Button Styles */
 
